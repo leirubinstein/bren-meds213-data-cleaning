@@ -248,6 +248,7 @@ We want to focus on the presence and absence of species and not the count. Let's
 
 ```{r}
 species_presence <- species_long %>%
+  mutate(species_presence = ifelse(species_count == "0", 0, 1))
   
 ```
 
@@ -255,8 +256,6 @@ We can remove some columns: "Num_observers", "All_obs_reported", "Observer_hours
 
 ```{r}
 species_presence <- species_presence %>%
-  
-
 ```
 
 Last but not least, let's have a look at our species list
